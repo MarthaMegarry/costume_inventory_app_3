@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="costumeApp" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Costume Inventory</title>
+    <link rel='stylesheet' href='../vendors/bootstrap.min.css'/>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+    <script type="text/javascript" src="../vendors/angular.min.js"></script>
+    <script type="text/javascript" src="../vendors/angular-route.min.js"></script>
+    <script type='text/javascript' src='../javascripts/app.js'></script>
+    <base href="/">
 </head>
 <body>
-
+    <div class="container-fluid">
+        <header>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Southwest High School Costume Shop</h1>
+                </div>
+                <div class="col-md-12">
+                    <img src="../images/actingisbelieving1.jpg" id="topPic"/>
+                </div>
+            </div>
+        </header>
+        <nav>
+            NavBar Directive Goes Here
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/costumes">Add Costume</a></li>
+            </ul>
+        </nav>
+        <div ng-view></div>
+        <footer>
+            <p>Copyright Martha Megarry and Minneapolis Southwest High School</p>
+        </footer>
+    </div>
 </body>
 </html>

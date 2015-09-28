@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,8 +23,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Mongo setup
+var mongoURI = "mongodb://localhost:27017/costume_app_database";
+var MongoDB = mongoose.connect(mongoURI).connection;
+
+MongoDB.on('error', function (err) {
+  console.log('mongodb connection error', err);
+});
+
+MongoDB.once('open', function () {
+  console.log('mongodb connection open');
+});
+
+
+
 app.use('/', routes);
 app.use('/users', users);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

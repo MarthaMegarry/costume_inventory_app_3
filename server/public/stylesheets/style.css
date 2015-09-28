@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+#topPic {
+  height: 200px;
+  width: 900px;
+}
+
+li {
+  display: inline;
+}
