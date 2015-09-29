@@ -1,1 +1,76 @@
 <h2>Costume Form!</h2>
+<form novalidate class="costume-form" ng-submit>
+    <div>
+        <label for="cosType">Type of costume:</label>
+        <select id="cosType" name="cosType" ng-model="form.cosType">
+            <option value="Jacket">Jacket</option>
+            <option value="Nightwear">Nightwear</option>
+            <option value="Costumes">Costume</option>
+            <option value="Coat">Coat</option>
+            <option value="Religious Garb">Religious Garb</option>
+            <option value="Skirt">Skirt</option>
+            <option value="Dress">Dress</option>
+            <option value="Vest">Vest</option>
+            <option value="Shirt">Shirt</option>
+        </select>
+    </div>
+    <div>
+        <label for="cosColor">Color Category:</label>
+        <input id="cosColor" type="text" name="cosColor" ng-model="form.cosColor">
+    </div>
+    <div>
+        <label for="cosNumber">Costume Number:</label>
+        <input type="number" name="cosNumber" id="cosNumber" ng-model="form.cosNumber">
+    </div>
+    <div>
+        <label for="cosGender">Gender :</label>
+        <select name="cosGender" id="cosGender" ng-model="form.cosGender">
+            <option value="Women's">Women's</option>
+            <option value="Men's">Men's</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+    </div>
+    <div>
+        <label for="cosSize">Size:</label>
+        <select id="cosSize" name="cosSize" ng-model="form.cosSize">
+            <option value="XXS">Extra Extra Small</option>
+            <option value="XS">Extra Small</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+            <option value="XXL">Extra Extra Large</option>
+        </select>
+    </div>
+    <div>
+        <label for="soulders">Shoulders:</label>
+        <input type="number" name="shoulders" id="soulders" ng-model="form.shoulders">
+    </div>
+    <div>
+        <label for="napetohem">Nape To Hem:</label>
+        <input type="number" name="napeToHem" id="napetohem" ng-model="form.napeToHem")>
+    </div>
+    <div>
+        <label for="shouldertowrist">Shoulder To Wrist:</label>
+        <input type="number" name="shoulderToWrist" id="shouldertowrist" ng-model="form.shoulderToWrist">
+    </div>
+    <div>
+        <label for="inseam">Inseam:</label>
+        <input type="number" name="inseam" id="inseam" ng-model="form.inseam">
+    </div>
+    <div>
+        <label for="length">Length:</label>
+        <input type="number" name="length" id="length" ng-model="form.length">
+    </div>
+    <div>
+        <label for="waist">Waist:</label>
+        <input type="number" name="waist" id="waist" ng-model="form.waist">
+    </div>
+    <div>
+        <label for="cosPic">Picture: Upload a picture of the costume</label>
+        <input type="file" id="cosPic" ng-model="form.cosPic">
+    </div>
+    <div>
+        <input type="submit" value="Add Costume">
+    </div>
+</form>

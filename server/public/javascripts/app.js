@@ -25,6 +25,13 @@ app.directive("navBar", function(){
     }
 });
 
+app.directive("sortBar", function(){
+    return {
+        restrict: 'E',
+        templateUrl: '../views/sort-bar.html'
+    }
+});
+
 app.directive("costumeGrid", function(){
     return {
         restrict: 'E',
@@ -57,6 +64,13 @@ app.directive("checkOut", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/check-out.html'
+    }
+});
+
+app.directive("showStatus", function(){
+    return {
+        restrict: 'E',
+        templateUrl: '../views/show-status.html'
     }
 });
 

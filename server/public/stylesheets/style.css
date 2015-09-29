@@ -8,8 +8,9 @@ a {
 }
 
 #topPic {
-  height: 200px;
-  width: 900px;
+  height: 300px;
+  /*width: 1200px;*/
+  overflow: hidden;
 }
 
 li {
