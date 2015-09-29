@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var grid = require('./routes/grid');
 
 var app = express();
 
@@ -40,7 +41,7 @@ MongoDB.once('open', function () {
 
 app.use('/', routes);
 app.use('/users', users);
-
+app.use('/grid', grid);
 
 
 // catch 404 and forward to error handler

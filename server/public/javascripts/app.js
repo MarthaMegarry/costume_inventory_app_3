@@ -28,7 +28,21 @@ app.directive("navBar", function(){
 app.directive("costumeGrid", function(){
     return {
         restrict: 'E',
-        templateUrl: '../views/grid.html'
+        templateUrl: '../views/grid.html',
+        controller: ['$scope', '$http', function($scope, $http){
+            console.log("The controller is firing");
+            $http.get('/grid').then(function(res){
+                if(res.status !== 200){
+                    console.log("erroreroor nonono");
+                    throw new Error('Failed to fetch costumes from the API');
+                    }
+                $scope.costume = {};
+                $scope.costumes = res.data;
+                console.log(res.data);
+                return res.data;
+                })
+            }],
+        controllerAs: "grid"
     }
 });
 
@@ -36,6 +50,13 @@ app.directive("gridItem", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/grid-item.html'
+    }
+});
+
+app.directive("checkOut", function(){
+    return {
+        restrict: 'E',
+        templateUrl: '../views/check-out.html'
     }
 });
 
