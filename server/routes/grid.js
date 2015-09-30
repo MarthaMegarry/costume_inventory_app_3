@@ -6,7 +6,6 @@ var router = express.Router();
 var Costume = require('../models/costumes.js');
 
 router.get('/',function(req,res,next){
-    //res.send("made it to the grid router");
     return Costume.find({}).exec(function(err, costumes){
         if(err) {
             throw err;
@@ -14,6 +13,16 @@ router.get('/',function(req,res,next){
             res.send(JSON.stringify(costumes));
         }
     });
+});
+
+router.post('/', function(req,res,next){
+    Costume.create(req.body, function (err, costume) {
+       if(err){
+            res.status(400).send(err.message);
+        } else{
+            res.sendStatus(200);
+        }
+    })
 });
 
 module.exports = router;
