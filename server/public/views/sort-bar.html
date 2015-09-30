@@ -1,3 +1,85 @@
 <div class="well col-lg-12">
-<h2>Sort Bar!</h2>
+    <h2>Costume Filter</h2>
+    <div>
+        <label for="textSearch">Search:</label>
+        <input id="textSearch" ng-model="search.$">
+    </div>
+    <div>
+        <label for="Type">Type of costume:</label>
+        <select id="Type" ng-model="search.cosType">
+            <option value="">Select:</option>
+            <option value="Jacket">Jacket</option>
+            <option value="Nightwear">Nightwear</option>
+            <option value="Costumes">Costume</option>
+            <option value="Coat">Coat</option>
+            <option value="Religious Garb">Religious Garb</option>
+            <option value="Skirt">Skirt</option>
+            <option value="Dress">Dress</option>
+            <option value="Vest">Vest</option>
+            <option value="Shirt">Shirt</option>
+        </select>
+    </div>
+    <div>
+        <label for="ColorCat">Color Category:</label>
+        <select id="ColorCat" name="cosColorCat" ng-model="search.cosColorCat">
+            <option value="">Select:</option>
+            <option value="White">White</option>
+            <option value="Pink">Pink</option>
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Gold">Gold</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Purple">Purple</option>
+            <option value="Brown">Brown</option>
+            <option value="Black">Black</option>
+        </select>
+    </div>
+    <div>
+        <label for="Gender">Gender :</label>
+        <select name="Gender" id="Gender" ng-model="search.cosGender">
+            <option value="">Select:</option>
+            <option value="Women's">Women's</option>
+            <option value="Men's">Men's</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+    </div>
+    <div>
+        <label for="Size">Size:</label>
+        <select id="Size" name="cosSize" ng-model="search.cosSize">
+            <option value="">Select:</option>
+            <option value="XXS">Extra Extra Small</option>
+            <option value="XS">Extra Small</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+            <option value="XXL">Extra Extra Large</option>
+        </select>
+    </div>
+    <div>
+        <label for="soulders2">Shoulders:</label>
+        <input type="number" name="shoulders2" id="soulders2" ng-model="search.shoulders">
+    </div>
+    <div>
+        <label for="napetohem2">Nape To Hem:</label>
+        <input type="number" name="napeToHem" id="napetohem2" ng-model="search.napeToHem")>
+    </div>
+    <div>
+        <label for="shouldertowrist2">Shoulder To Wrist:</label>
+        <input type="number" name="shoulderToWrist" id="shouldertowrist2" ng-model="search.shoulderToWrist">
+    </div>
+    <div>
+        <label for="inseam2">Inseam:</label>
+        <input type="number" name="inseam" id="inseam2" ng-model="search.inseam">
+    </div>
+    <div>
+        <label for="length2">Length:</label>
+        <input type="number" name="length" id="length2" ng-model="search.length">
+    </div>
+    <div>
+        <label for="waist2">Waist:</label>
+        <input type="number" name="waist" id="waist2" ng-model="search.waist">
+    </div>
 </div>

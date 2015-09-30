@@ -8,6 +8,7 @@ var CostumeSchema = new Schema({
     cosPic: { type: String },
     cosType: { type: String },
     cosColor: { type: String },
+    cosColorCat: { type: String },
     cosNumber: { type: String },
     cosGender: { type: String },
     cosSize: { type: String },

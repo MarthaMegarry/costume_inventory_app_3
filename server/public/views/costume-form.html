@@ -1,5 +1,5 @@
 <h2>Costume Form!</h2>
-<form novalidate class="costume-form" ng-submit>
+<form class="form" ng-submit="submit()">
     <div>
         <label for="cosType">Type of costume:</label>
         <select id="cosType" name="cosType" ng-model="form.cosType">
@@ -15,8 +15,24 @@
         </select>
     </div>
     <div>
-        <label for="cosColor">Color Category:</label>
-        <input id="cosColor" type="text" name="cosColor" ng-model="form.cosColor">
+        <label for="cosColor">Color:</label>
+        <input type="text" id="cosColor" ng-model="cosColor">
+    </div>
+    <div>
+        <label for="cosColorCat">Color Category:</label>
+        <select id="cosColorCat" name="cosColorCat" ng-model="form.cosColorCat">
+            <option value="White">White</option>
+            <option value="Pink">Pink</option>
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Gold">Gold</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Purple">Purple</option>
+            <option value="Brown">Brown</option>
+            <option value="Black">Black</option>
+        </select>
     </div>
     <div>
         <label for="cosNumber">Costume Number:</label>

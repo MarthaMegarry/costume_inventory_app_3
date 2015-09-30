@@ -79,13 +79,14 @@ app.directive("costumeForm", function(){
         restrict: 'E',
         templateUrl: '../views/costume-form.html',
         controller: ['$scope', '$http', function($scope, $http){
-            console.log("The costumeform controller is firing");
-            $http.post('/grid').then(function(res) {
-                if (res.status !== 200) {
-                    console.log("erroreroor nonono");
-                    throw new Error('Failed to post');
-                }
-            })
+            $scope.submit = function(){
+                $http.post('/grid', $scope.form).then(function(res) {
+                    if (res.status !== 200) {
+                        console.log("erroreroor nonono");
+                        throw new Error('Failed to post');
+                    }
+                })
+            }
         }]
     }
 });
