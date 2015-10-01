@@ -1,7 +1,7 @@
 /**
  * Created by Mothra on 9/28/15.
  */
-var app = angular.module('costumeApp', ['ngRoute']);
+var app = angular.module('costumeApp', ['ngRoute', 'xeditable']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
@@ -37,10 +37,10 @@ app.directive("costumeGrid", function(){
         restrict: 'E',
         templateUrl: '../views/grid.html',
         controller: ['$scope', '$http', function($scope, $http){
-            console.log("The controller is firing");
+            console.log("The costumeGrid controller is firing");
             $http.get('/grid').then(function(res){
                 if(res.status !== 200){
-                    console.log("erroreroor nonono");
+                    console.log("error error nonono");
                     throw new Error('Failed to fetch costumes from the API');
                     }
                 $scope.costume = {};
@@ -56,7 +56,26 @@ app.directive("costumeGrid", function(){
 app.directive("gridItem", function(){
     return {
         restrict: 'E',
-        templateUrl: '../views/grid-item.html'
+        templateUrl: '../views/grid-item.html',
+        controller: ['$scope', '$http', function($scope, $http){
+            console.log("gridItem Controller is firing")
+            console.log($scope.costume);
+
+            $scope.submitChanges = function(){
+                return $http({
+                    url: '/grid',
+                    method: 'PUT',
+                    data: $scope.costume
+                }).then(function(res) {
+                    if (res.status = !200) {
+                        console.log("Error, did not update DB");
+                    }
+                })
+            }
+
+
+
+        }]
     }
 });
 
@@ -64,6 +83,8 @@ app.directive("checkOut", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/check-out.html'
+        //controller: ['$scope', '$http', function($scope, $http){
+        //}]
     }
 });
 

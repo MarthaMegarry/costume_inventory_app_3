@@ -1,7 +1,8 @@
 <div class="col-md-4">
     <div class="well">
         <img src="../images/apple.png" alt="apple placeholder"/>
-        <h3>{{costume.cosColor}} {{costume.cosGender}} {{costume.cosType}}</h3>
+        <h3>{{costume.cosColor}} {{costume.cosGender}}
+            <a href="#" editable-text="costume.cosType" onaftersave="submitChanges()">{{costume.cosType || 'empty'}}</a></h3>
         <p>{{costume.cosNumber}}</p>
         <p>{{costume.cosSize}}</p>
         <p>{{costume.napeToHem}}"</p>

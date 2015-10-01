@@ -15,6 +15,13 @@ router.get('/',function(req,res,next){
     });
 });
 
+router.put('/', function(req, res, next){
+    Costume.findByIdAndUpdate(req.body._id, req.body, function(err, costume) {
+        if(err) console.log(err);
+        res.send(costume);
+    })
+});
+
 router.post('/', function(req,res,next){
     Costume.create(req.body, function (err, costume) {
        if(err){

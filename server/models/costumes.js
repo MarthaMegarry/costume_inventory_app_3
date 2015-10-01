@@ -18,7 +18,7 @@ var CostumeSchema = new Schema({
     inseam: { type: Number },
     length: { type: Number },
     waist: { type: Number },
-    checkedOut: { type: Boolean },
+    checkedOut: { type: String },
     shows: { type: Array },
     notes: { type: String },
     linked: { type: Array }

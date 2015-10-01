@@ -1,1 +1,17 @@
-<h2>Checkout Status: Unknown</h2>
+<h2>Checkout Status: {{form.checkitout}}</h2>
+<form ng-submit="submit()">
+    <div>
+        <label>
+            <input type="radio" ng-model="form.checkedOut" value="available" checked>
+            Available
+        </label>
+        <label>
+            <input type="radio" ng-model="form.checkedOut" value="onhold">
+            On Hold
+        </label>
+        <label>
+            <input type="radio" ng-model="form.checkedOut" value="pulled">
+            Pulled
+        </label>
+    </div>
+</form>
