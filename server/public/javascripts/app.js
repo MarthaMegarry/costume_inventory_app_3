@@ -73,6 +73,14 @@ app.directive("gridItem", function(){
                 {value: "Pulled", text: "Pulled"},
             ];
 
+            //
+            //if($scope.checkedOut == "On Hold"){
+            //    $scope.css({class: "onHold"})
+            //} else if ($scope.checkedOut == "Pulled"){
+            //    $scope.css({class: "pulled"})
+            //}
+
+
             $scope.submitChanges = function(){
                 return $http({
                     url: '/grid',

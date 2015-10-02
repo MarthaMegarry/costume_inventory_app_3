@@ -13,6 +13,6 @@
         <p>Inseam: <a href="#" editable-number="costume.inseam" e-min="1" onaftersave="submitChanges()">{{costume.inseam || "N/A" }}</a></p>
         <p>Length: <a href="#" editable-number="costume.length" e-min="1" onaftersave="submitChanges()">{{costume.length || "N/A" }}</a></p>
         <p>Waist: <a href="#" editable-number="costume.waist" e-min="1" onaftersave="submitChanges()">{{costume.waist || "N/A" }}</a></p>
-        <a href="#" editable-radiolist="costume.checkedOut" e-ng-options="c.value as c.text for c in checkedOut" onaftersave="submitChanges()">  {{costume.checkedOut}}</a>
+        <a href="#" editable-radiolist="costume.checkedOut" e-ng-options="c.value as c.text for c in checkedOut" onaftersave="submitChanges()">  {{costume.checkedOut || "Available"}}</a>
     </div>
 </div>

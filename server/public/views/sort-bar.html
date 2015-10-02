@@ -82,4 +82,13 @@
         <label for="waist2">Waist:</label>
         <input type="number" name="waist" id="waist2" ng-model="search.waist">
     </div>
+    <div>
+        <label for="checkedOut">Check Out Status</label>
+        <select name="checkedOut" id="checkedOut" ng-model="search.checkedOut">
+            <option value="">Select:</option>
+            <option value="Available">Available</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Pulled">Pulled</option>
+        </select>
+    </div>
 </div>

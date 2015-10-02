@@ -30,3 +30,11 @@ a {
   width: 175px;
   background-color: darkslateblue;
 }
+
+.onHold {
+  border-color: orange;
+}
+
+.pulled {
+  border-color: red;
+}
