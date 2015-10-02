@@ -2,7 +2,7 @@
     <div class="well">
         <div class="noPic"></div>
         <h3>
-            <a href="#" editable-text="costume.cosColor" onaftersave="submitChanges()">{{costume.cosColor}}</a>
+            <a href="#" editable-text="costume.cosColor" onaftersave="submitChanges()">{{costume.cosColor || costume.cosColorCat}}</a>
             <a href="#" editable-radiolist="costume.cosGender" e-ng-options="s.value as s.text for s in cosGender" onaftersave="submitChanges()">  {{costume.cosGender}}</a>
             <a href="#" editable-text="costume.cosType" onaftersave="submitChanges()">{{costume.cosType || 'empty'}}</a></h3>
         <p>Number: <a href="#" editable-text="costume.cosNumber" onaftersave="submitChanges()">{{costume.cosNumber}}</a></p>

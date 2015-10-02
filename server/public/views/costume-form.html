@@ -2,7 +2,7 @@
 <form class="form" ng-submit="submit()">
     <div>
         <label for="cosType">Type of costume:</label>
-        <select id="cosType" name="cosType" ng-model="form.cosType">
+        <select id="cosType" name="cosType" ng-model="form.cosType" required>
             <option value="Jacket">Jacket</option>
             <option value="Nightwear">Nightwear</option>
             <option value="Costumes">Costume</option>
@@ -16,7 +16,7 @@
     </div>
     <div>
         <label for="cosColor">Color:</label>
-        <input type="text" id="cosColor" ng-model="cosColor">
+        <input type="text" id="cosColor" ng-model="form.cosColor">
     </div>
     <div>
         <label for="cosColorCat">Color Category:</label>

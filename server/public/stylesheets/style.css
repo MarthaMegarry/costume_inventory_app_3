@@ -38,3 +38,7 @@ a {
 .pulled {
   border-color: red;
 }
+
+.editable-buttons {
+  display: block;
+}

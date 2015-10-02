@@ -112,6 +112,9 @@ app.directive("costumeForm", function(){
         templateUrl: '../views/costume-form.html',
         controller: ['$scope', '$http', function($scope, $http){
             $scope.submit = function(){
+                $scope.form.checkedOut = "Available";
+                $scope.form.shows = [];
+
                 $http.post('/grid', $scope.form).then(function(res) {
                     if (res.status !== 200) {
                         console.log("erroreroor nonono");
