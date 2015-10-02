@@ -16,3 +16,17 @@ a {
 li {
   display: inline;
 }
+
+a {
+  color: black;
+}
+
+.editable-radiolist label {
+  display: block;
+}
+
+.noPic {
+  height: 175px;
+  width: 175px;
+  background-color: darkslateblue;
+}

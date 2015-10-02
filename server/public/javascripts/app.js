@@ -57,9 +57,21 @@ app.directive("gridItem", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/grid-item.html',
-        controller: ['$scope', '$http', function($scope, $http){
+        controller: ['$scope', '$filter', '$http', function($scope, $filter, $http){
             console.log("gridItem Controller is firing")
             console.log($scope.costume);
+
+            $scope.cosGender = [
+                {value: "Women's", text: "Women's"},
+                {value: "Men's", text: "Men's"},
+                {value: "Unisex", text: "Unisex"}
+            ];
+
+            $scope.checkedOut = [
+                {value: "Available", text: "Available"},
+                {value: "On Hold", text: "On Hold"},
+                {value: "Pulled", text: "Pulled"},
+            ];
 
             $scope.submitChanges = function(){
                 return $http({
@@ -76,15 +88,6 @@ app.directive("gridItem", function(){
 
 
         }]
-    }
-});
-
-app.directive("checkOut", function(){
-    return {
-        restrict: 'E',
-        templateUrl: '../views/check-out.html'
-        //controller: ['$scope', '$http', function($scope, $http){
-        //}]
     }
 });
 

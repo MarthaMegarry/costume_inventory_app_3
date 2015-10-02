@@ -1,16 +1,18 @@
 <div class="col-md-4">
     <div class="well">
-        <img src="../images/apple.png" alt="apple placeholder"/>
-        <h3>{{costume.cosColor}} {{costume.cosGender}}
+        <div class="noPic"></div>
+        <h3>
+            <a href="#" editable-text="costume.cosColor" onaftersave="submitChanges()">{{costume.cosColor}}</a>
+            <a href="#" editable-radiolist="costume.cosGender" e-ng-options="s.value as s.text for s in cosGender" onaftersave="submitChanges()">  {{costume.cosGender}}</a>
             <a href="#" editable-text="costume.cosType" onaftersave="submitChanges()">{{costume.cosType || 'empty'}}</a></h3>
-        <p>{{costume.cosNumber}}</p>
-        <p>{{costume.cosSize}}</p>
-        <p>{{costume.napeToHem}}"</p>
-        <p>{{costume.shoulderToWrist}}"</p>
-        <p>{{costume.inseam}}"</p>
-        <p>{{costume.length}}"</p>
-        <p>{{costume.waist}}"</p>
-        <check-out></check-out>
-        <show-status></show-status>
+        <p>Number: <a href="#" editable-text="costume.cosNumber" onaftersave="submitChanges()">{{costume.cosNumber}}</a></p>
+        <p>Color Category: <a href="#" editable-text="costume.cosColorCat" onaftersave="submitChanges()">{{costume.cosColorCat}}</a></p>
+        <p>Size: <a href="#" editable-text="costume.cosSize" onaftersave="submitChanges()">{{costume.cosSize || "N/A" }}</a></p>
+        <p>Nape to Hem: <a href="#" editable-number="costume.napeToHem" e-min="1" onaftersave="submitChanges()">{{costume.napeToHem || "N/A" }}</a></p>
+        <p>Shoulder to Wrist: <a href="#" editable-number="costume.shoulderToWrist" e-min="1" onaftersave="submitChanges()">{{costume.shoulderToWrist || "N/A" }}</a></p>
+        <p>Inseam: <a href="#" editable-number="costume.inseam" e-min="1" onaftersave="submitChanges()">{{costume.inseam || "N/A" }}</a></p>
+        <p>Length: <a href="#" editable-number="costume.length" e-min="1" onaftersave="submitChanges()">{{costume.length || "N/A" }}</a></p>
+        <p>Waist: <a href="#" editable-number="costume.waist" e-min="1" onaftersave="submitChanges()">{{costume.waist || "N/A" }}</a></p>
+        <a href="#" editable-radiolist="costume.checkedOut" e-ng-options="c.value as c.text for c in checkedOut" onaftersave="submitChanges()">  {{costume.checkedOut}}</a>
     </div>
 </div>
