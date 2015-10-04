@@ -1,7 +1,7 @@
 /**
  * Created by Mothra on 9/28/15.
  */
-var app = angular.module('costumeApp', ['ngRoute', 'xeditable']);
+var app = angular.module('costumeApp', ['ngRoute', 'angularFileUpload', 'xeditable']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
@@ -110,15 +110,44 @@ app.directive("costumeForm", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/costume-form.html',
-        controller: ['$scope', '$http', function($scope, $http){
+        controller: ['$scope', '$http', '$location', 'FileUploader', function($scope, $http, $location, FileUploader){
+
+
+            $scope.uploader = new FileUploader();
+            $scope.uploader.url = "/grid/upload";
+            $scope.uploader.onAfterAddingFile = function(item) {
+                item.upload();
+                item.onSuccess = function(response, status, headers) {
+                    console.log("Item upload success!");
+                    console.log(response);
+                    $scope.form.cosPic = response;
+                };
+
+
+                item.onError = function(response, status, headers) {
+                    console.log("Item upload failed...");
+                    console.log("Response:" , response);
+                    console.log("Status: " , status);
+                    console.log("Headers: " , headers);
+                };
+            };
+
+
+
             $scope.submit = function(){
                 $http.post('/grid', $scope.form).then(function(res) {
                     if (res.status !== 200) {
                         console.log("erroreroor nonono");
                         throw new Error('Failed to post');
+                    } else {
+                        $location.path('/costumes');
                     }
                 })
-            }
+            };
+
+
+
+
         }]
     }
 });
