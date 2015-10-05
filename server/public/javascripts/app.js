@@ -1,7 +1,7 @@
 /**
  * Created by Mothra on 9/28/15.
  */
-var app = angular.module('costumeApp', ['ngRoute', 'xeditable']);
+var app = angular.module('costumeApp', ['ngRoute', 'angularFileUpload', 'xeditable']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
@@ -110,7 +110,30 @@ app.directive("costumeForm", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/costume-form.html',
-        controller: ['$scope', '$http', function($scope, $http){
+        controller: ['$scope', '$http', 'FileUploader', function($scope, $http, FileUploader){
+
+            //Upload when user selects file
+
+            $scope.uploader = new FileUploader();
+            $scope.uploader.url = "/grid/upload";
+            $scope.uploader.onAfterAddingFile = function(item) {
+                item.upload();
+                item.onSuccess = function(response, status, headers) {
+                    console.log("Item upload success!");
+                    console.log(response);
+                    $scope.form.cosPic = response;
+                };
+
+                item.onError = function(response, status, headers) {
+                    console.log("Item upload failed...");
+                    console.log("Response:" , response);
+                    console.log("Status: " , status);
+                    console.log("Headers: " , headers);
+                };
+            };
+
+            //Submit the rest of the form
+
             $scope.submit = function(){
                 $scope.form.checkedOut = "Available";
                 $scope.form.shows = [];
@@ -120,8 +143,14 @@ app.directive("costumeForm", function(){
                         console.log("erroreroor nonono");
                         throw new Error('Failed to post');
                     }
-                })
-            }
+                }).then(
+                    console.log("Awesome you got to here!"),
+                    $scope.form = null
+                )
+            };
+
+
+
         }]
     }
 });

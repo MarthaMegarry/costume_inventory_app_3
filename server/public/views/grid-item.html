@@ -1,6 +1,11 @@
 <div class="col-md-4">
     <div class="well">
-        <div class="noPic"></div>
+
+        <div ng-show="costume.cosPic">
+            <img class="cosPic" src="{{costume.cosPic}}" alt="{{costume.cosColor}} {{costume.cosGender}} {{costume.cosType}}"/>
+        </div>
+        <div class="noPic" ng-hide="costume.cosPic"></div>
+
         <h3>
             <a href="#" editable-text="costume.cosColor" onaftersave="submitChanges()">{{costume.cosColor || costume.cosColorCat}}</a>
             <a href="#" editable-radiolist="costume.cosGender" e-ng-options="s.value as s.text for s in cosGender" onaftersave="submitChanges()">  {{costume.cosGender}}</a>

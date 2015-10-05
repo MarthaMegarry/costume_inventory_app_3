@@ -42,3 +42,8 @@ a {
 .editable-buttons {
   display: block;
 }
+
+.cosPic {
+  height: 40%;
+  width: 40%;
+}
