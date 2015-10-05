@@ -110,8 +110,9 @@ app.directive("costumeForm", function(){
     return {
         restrict: 'E',
         templateUrl: '../views/costume-form.html',
-        controller: ['$scope', '$http', '$location', 'FileUploader', function($scope, $http, $location, FileUploader){
+        controller: ['$scope', '$http', 'FileUploader', function($scope, $http, FileUploader){
 
+            //Upload when user selects file
 
             $scope.uploader = new FileUploader();
             $scope.uploader.url = "/grid/upload";
@@ -123,7 +124,6 @@ app.directive("costumeForm", function(){
                     $scope.form.cosPic = response;
                 };
 
-
                 item.onError = function(response, status, headers) {
                     console.log("Item upload failed...");
                     console.log("Response:" , response);
@@ -132,19 +132,19 @@ app.directive("costumeForm", function(){
                 };
             };
 
-
+            //Submit the rest of the form
 
             $scope.submit = function(){
                 $http.post('/grid', $scope.form).then(function(res) {
                     if (res.status !== 200) {
                         console.log("erroreroor nonono");
                         throw new Error('Failed to post');
-                    } else {
-                        $location.path('/costumes');
                     }
-                })
+                }).then(
+                    console.log("Awesome you got to here!"),
+                    $scope.form = null
+                )
             };
-
 
 
 

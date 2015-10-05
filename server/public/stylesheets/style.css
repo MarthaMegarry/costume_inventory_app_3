@@ -38,3 +38,8 @@ a {
 .pulled {
   border-color: red;
 }
+
+.cosPic {
+  height: 40%;
+  width: 40%;
+}
