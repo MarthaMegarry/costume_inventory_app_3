@@ -61,3 +61,5 @@ node_modules
 *.iml
 out
 gen
+
+/server/public/images
