@@ -1,16 +1,37 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-color: #522D90;*/
+  padding: 0px;
+}
+
+.container-fluid {
+  background-color: white;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 a {
   color: #00B7FF;
 }
 
+.topBar {
+  height: 30px;
+  background-color: #EE3437;
+}
+
 #topPic {
   height: 300px;
   /*width: 1200px;*/
   overflow: hidden;
+}
+
+.swlogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 li {
@@ -46,4 +67,9 @@ a {
 .cosPic {
   height: 40%;
   width: 40%;
+}
+
+.footer {
+  height: 100px;
+  background-color: #522D90;
 }
